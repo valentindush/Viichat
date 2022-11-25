@@ -10,74 +10,31 @@ import { ChatContainer } from '../components/chat/ChatContainer'
 export const Home = () => {
 
     const [view,setView] = useState(false)
+    const [activeContact,setActiveContact] = useState<{uuid:string,username:string}>({uuid:"",username:""})
     
 
     const contacts:{lastMsg:string, username:string,uid:string,date:Date}[] = [
-        {
-            username: "Dush Valentin",
-            lastMsg: "Hello how you doin",
-            uid: `${Math.floor(Math.random() * 99999)}`,
-            date: new Date()
-        },
-        {
-            username: "Dush Valentin",
-            lastMsg: "Hello how you doin",
-            uid: `${Math.floor(Math.random() * 99999)}`,
-            date: new Date()
-        },
-        {
-            username: "Dush Valentin",
-            lastMsg: "Hello how you doin",
-            uid: `${Math.floor(Math.random() * 99999)}`,
-            date: new Date()
-        },
-        {
-            username: "Dush Valentin",
-            lastMsg: "Hello how you doin",
-            uid: `${Math.floor(Math.random() * 99999)}`,
-            date: new Date()
-        },
-        {
-            username: "Dush Valentin",
-            lastMsg: "Hello how you doin",
-            uid: `${Math.floor(Math.random() * 99999)}`,
-            date: new Date()
-        },
-        {
-            username: "Dush Valentin",
+       {
+            username: "Kendric lamar",
             lastMsg: "Hello how you doin",
             uid: `${Math.floor(Math.random() * 99999)}`,
             date: new Date()
         },{
-            username: "Dush Valentin",
+            username: "Franklin",
             lastMsg: "Hello how you doin",
             uid: `${Math.floor(Math.random() * 99999)}`,
             date: new Date()
         },{
-            username: "Dush Valentin",
-            lastMsg: "Hello how you doin",
-            uid: `${Math.floor(Math.random() * 99999)}`,
-            date: new Date()
-        },{
-            username: "Dush Valentin",
-            lastMsg: "Hello how you doin",
-            uid: `${Math.floor(Math.random() * 99999)}`,
-            date: new Date()
-        },{
-            username: "Dush Valentin",
-            lastMsg: "Hello how you doin",
-            uid: `${Math.floor(Math.random() * 99999)}`,
-            date: new Date()
-        },{
-            username: "Dush Valentin",
+            username: "Dush",
             lastMsg: "Hello how you doin",
             uid: `${Math.floor(Math.random() * 99999)}`,
             date: new Date()
         },
 
     ]
-    const changeActiveChat=(uid:string)=>{
+    const changeActiveChat=(uid:string,username:string)=>{
         setView(true)
+        setActiveContact({username:username,uuid:uid})
     }
     const changeView = (opt: boolean)=>{
         setView(opt)
@@ -85,7 +42,7 @@ export const Home = () => {
   return (
     <div className='bg-[#222] h-screen home flex overflow-hidden'>
         <div className="left h-full w-[350px] p-4 flex flex-col">
-            <div className="top pt-8">
+            <div className="top">
                 <div className="profile flex justify-between items-center">
                     <div className="">
                         <div className="relative flex gap-2 ">
@@ -152,7 +109,7 @@ export const Home = () => {
                 </div>
             </div>
         </div>
-        {view?<ChatContainer /> : <Cover/>}
+        {view?<ChatContainer user={activeContact} /> : <Cover/>}
     </div>
     
   )
