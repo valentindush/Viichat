@@ -37,7 +37,7 @@ export default function ChatContact({contact,handler} : PropsType) {
     }
 
   return (
-    <div className='  flex justify-between hover:bg-slate-700 rounded-lg cursor-pointer hover:bg-opacity-10 py-2 pr-3' onClick={()=>handler(uid)}>
+    <div className='  flex justify-between hover:bg-slate-700 rounded-lg cursor-pointer hover:bg-opacity-10 py-2 pr-3' onClick={()=>handler(uid,username)}>
         <div className="details">
             <div className="flex items-center gap-2">
                 <div className={`text-white w-10 h-10 rounded-full font-semibold text-sm bg-gradient-to-br ${gradients[gradientIndex]} flex items-center justify-center `}>

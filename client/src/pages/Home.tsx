@@ -10,74 +10,31 @@ import { ChatContainer } from '../components/chat/ChatContainer'
 export const Home = () => {
 
     const [view,setView] = useState(false)
+    const [activeContact,setActiveContact] = useState<{uuid:string,username:string}>({uuid:"",username:""})
     
 
     const contacts:{lastMsg:string, username:string,uid:string,date:Date}[] = [
-        {
-            username: "Dush Valentin",
-            lastMsg: "Hello how you doin",
-            uid: `${Math.floor(Math.random() * 99999)}`,
-            date: new Date()
-        },
-        {
-            username: "Dush Valentin",
-            lastMsg: "Hello how you doin",
-            uid: `${Math.floor(Math.random() * 99999)}`,
-            date: new Date()
-        },
-        {
-            username: "Dush Valentin",
-            lastMsg: "Hello how you doin",
-            uid: `${Math.floor(Math.random() * 99999)}`,
-            date: new Date()
-        },
-        {
-            username: "Dush Valentin",
-            lastMsg: "Hello how you doin",
-            uid: `${Math.floor(Math.random() * 99999)}`,
-            date: new Date()
-        },
-        {
-            username: "Dush Valentin",
-            lastMsg: "Hello how you doin",
-            uid: `${Math.floor(Math.random() * 99999)}`,
-            date: new Date()
-        },
-        {
-            username: "Dush Valentin",
+       {
+            username: "Kendric lamar",
             lastMsg: "Hello how you doin",
             uid: `${Math.floor(Math.random() * 99999)}`,
             date: new Date()
         },{
-            username: "Dush Valentin",
+            username: "Franklin",
             lastMsg: "Hello how you doin",
             uid: `${Math.floor(Math.random() * 99999)}`,
             date: new Date()
         },{
-            username: "Dush Valentin",
-            lastMsg: "Hello how you doin",
-            uid: `${Math.floor(Math.random() * 99999)}`,
-            date: new Date()
-        },{
-            username: "Dush Valentin",
-            lastMsg: "Hello how you doin",
-            uid: `${Math.floor(Math.random() * 99999)}`,
-            date: new Date()
-        },{
-            username: "Dush Valentin",
-            lastMsg: "Hello how you doin",
-            uid: `${Math.floor(Math.random() * 99999)}`,
-            date: new Date()
-        },{
-            username: "Dush Valentin",
+            username: "Dush",
             lastMsg: "Hello how you doin",
             uid: `${Math.floor(Math.random() * 99999)}`,
             date: new Date()
         },
 
     ]
-    const changeActiveChat=(uid:string)=>{
+    const changeActiveChat=(uid:string,username:string)=>{
         setView(true)
+        setActiveContact({username:username,uuid:uid})
     }
     const changeView = (opt: boolean)=>{
         setView(opt)
