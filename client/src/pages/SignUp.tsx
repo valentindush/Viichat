@@ -55,12 +55,12 @@ export const SignUp = () => {
 
           <p className="mt-8 text-xs font-light text-center text-gray-700">
             {" "}
-            Don't have an account?{" "}
+            Already have account?{" "}
             <Link
               to="/login"
               className="font-medium text-purple-600 hover:underline"
             >
-              Sign up
+              Login
             </Link>
           </p>
         </div>
